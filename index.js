@@ -1,4 +1,4 @@
-import * as Carousel from "./Carousel.js";
+import * as Carousel from "Carousel.js";
 import axios from "axios";
 
 // The breed selection input element.
@@ -9,9 +9,15 @@ const infoDump = document.getElementById("infoDump");
 const progressBar = document.getElementById("progressBar");
 // The get favourites button element.
 const getFavouritesBtn = document.getElementById("getFavouritesBtn");
-
-// Step 0: Store your API key here for reference and easy access.
 const API_KEY = "live_bFv5MyGycT3bjaonYRTZKVDl6mPjqu06UpKF26QsQRxC3gKyPuw3QHaSC5cVbUaC";
+let urlInfo = "https://api.thecatapi.com/v1/images/search?limit=10";
+let option = document.createElement("option"); 
+
+async function initialLoad() {
+    let promise = fetch(urlInfo);
+
+
+}
 
 /**
  * 1. Create an async function "initialLoad" that does the following:
@@ -21,6 +27,10 @@ const API_KEY = "live_bFv5MyGycT3bjaonYRTZKVDl6mPjqu06UpKF26QsQRxC3gKyPuw3QHaSC5
  *  - Each option should display text equal to the name of the breed.
  * This function should execute immediately.
  */
+    breedSelect.addEventListener("click", (e) => {
+
+    })
+
 
 /**
  * 2. Create an event handler for breedSelect that does the following:
@@ -91,3 +101,23 @@ const API_KEY = "live_bFv5MyGycT3bjaonYRTZKVDl6mPjqu06UpKF26QsQRxC3gKyPuw3QHaSC5
 export async function favourite(imgId) {
   // your code here
 }
+
+/**
+ * 9. Test your favourite() function by creating a getFavourites() function.
+ * - Use Axios to get all of your favourites from the cat API.
+ * - Clear the carousel and display your favourites when the button is clicked.
+ *  - You will have to bind this event listener to getFavouritesBtn yourself.
+ *  - Hint: you already have all of the logic built for building a carousel.
+ *    If that isn't in its own function, maybe it should be so you don't have to
+ *    repeat yourself in this section.
+ */
+
+/**
+ * 10. Test your site, thoroughly!
+ * - What happens when you try to load the Malayan breed?
+ *  - If this is working, good job! If not, look for the reason why and fix it!
+ * - Test other breeds as well. Not every breed has the same data available, so
+ *   your code should account for this.
+ */
+
+initialLoad();
