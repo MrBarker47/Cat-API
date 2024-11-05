@@ -16,21 +16,33 @@ let urlInfo = "https://api.thecatapi.com/v1/images/search?limit=10";
 // Task 1
 async function initialLoad() {
      fetch(urlInfo)
-     .then(res => res.json())
-     .then(res => res.results)
+     .then(response => response.json())
+     .then(data => console.log(data))
      .catch(err => console.log(err))
      let option = document.createElement("option"); 
      option.textContent = ""
      breedSelect.appendChild(option);
-
+    
 
 }
 
+initialLoad()
 
 //Task 2 
     breedSelect.addEventListener("click", (e) => {
-        
+     fetch(urlInfo)
+     .then(response => response.json())
+     .then(response => console.log(response))
+     .catch(err => console.log(err))
     })
+    let carousel = document.getElementById("carouselItemTemplate");
+    breedSelect.append(carousel);
+
+    let item = document.getElementsByClassName("carousel-item");
+    breedSelect.append(item);
+
+    let img = document.querySelector("img");
+    breedSelect.append(img);
 
 export async function favourite(imgId) {
 
@@ -38,4 +50,3 @@ export async function favourite(imgId) {
 
 
 
-console.log("Hello World");
