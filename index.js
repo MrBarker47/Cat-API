@@ -8,6 +8,8 @@ const infoDump = document.getElementById("infoDump");
 // The progress bar div element.
 const progressBar = document.getElementById("progressBar");
 // The get favourites button element.
+
+
 const getFavouritesBtn = document.getElementById("getFavouritesBtn");
 const API_KEY = "live_bFv5MyGycT3bjaonYRTZKVDl6mPjqu06UpKF26QsQRxC3gKyPuw3QHaSC5cVbUaC";
 let urlInfo = "https://api.thecatapi.com/v1/images/search?limit=10";
@@ -32,17 +34,11 @@ initialLoad()
     breedSelect.addEventListener("click", (e) => {
      fetch(urlInfo)
      .then(response => response.json())
-     .then(response => console.log(response))
+     .then(response => response)
      .catch(err => console.log(err))
     })
-    let carousel = document.getElementById("carouselItemTemplate");
-    breedSelect.append(carousel);
-
-    let item = document.getElementsByClassName("carousel-item");
-    breedSelect.append(item);
-
-    let img = document.querySelector("img");
-    breedSelect.append(img);
+    
+   
 
 export async function favourite(imgId) {
 
@@ -50,3 +46,4 @@ export async function favourite(imgId) {
 
 
 
+//Progress
