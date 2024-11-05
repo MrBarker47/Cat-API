@@ -11,7 +11,7 @@ const progressBar = document.getElementById("progressBar");
 const getFavouritesBtn = document.getElementById("getFavouritesBtn");
 const API_KEY = "live_bFv5MyGycT3bjaonYRTZKVDl6mPjqu06UpKF26QsQRxC3gKyPuw3QHaSC5cVbUaC";
 let urlInfo = "https://api.thecatapi.com/v1/images/search?limit=10";
-let option = document.createElement("option"); 
+
 
 // Task 1
 async function initialLoad() {
@@ -19,12 +19,17 @@ async function initialLoad() {
      .then(res => res.json())
      .then(res => res.results)
      .catch(err => console.log(err))
+     let option = document.createElement("option"); 
+     option.textContent = ""
+     breedSelect.appendChild(option);
+
+
 }
 
 
 //Task 2 
     breedSelect.addEventListener("click", (e) => {
-
+        
     })
 
 export async function favourite(imgId) {
